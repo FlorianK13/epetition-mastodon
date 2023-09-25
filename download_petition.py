@@ -26,17 +26,24 @@ def get_current_petitions() -> pd.DataFrame:
     return df
 
 
-def get_10k_post() -> str:
+def get_10k_petitionen() -> list:
     df = get_current_petitions()
     post_list = []
 
-    for index, row in df.iterrows():
+    for _, row in df.iterrows():
         if row["Mitzeichnungen"]>10000:
+            post = f'Eine neue Petition hat mehr als 10.000 Unterschriften: \n Titel: {row["Titel"]} \n Mitzeichnungen: {row["Mitzeichnungen"]} \n Diese Petition endet in {row["days_until"]} Tagen am {row["end_date_string"]} \n Link: {row["url"]} \n #bundestag #petition'
+            petition_id = row["Id-Nr."]
             post_list.append(
-                f'Eine neue Petition hat mehr als 10.000 Unterschriften: \n Titel: {row["Titel"]} \n Mitzeichnungen: {row["Mitzeichnungen"]} \n Diese Petition endet in {row["days_until"]} Tagen am {row["end_date_string"]} \n Link: {row["url"]}'
+                {
+                    "id": petition_id,
+                    "post": post
+                }
             )
  
 
     
     return post_list
     
+if __name__=="__main__":
+    get_10k_petitionen()
