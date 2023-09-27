@@ -3,7 +3,6 @@ import pandas as pd
 from datetime import datetime
 import re
 from io import StringIO
-import pdb
 
 def get_current_petitions() -> pd.DataFrame:
     url = "https://epetitionen.bundestag.de/epet/petuebersicht/mz.nc.content.teaser-petitionen-table.$$$.sort.mz_d.ssi.true.status.2.page.0.batchsize.10.html" 
