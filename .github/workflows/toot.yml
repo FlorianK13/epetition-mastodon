@@ -32,7 +32,7 @@ jobs:
     - name: Run the mastodon bot
       env:
         TOOT_CONFIG: ${{ secrets.PYTOOTER_USERCRED }}
-      # Write that JSON to the config file
+      # Write that information to the secret file
       run: |-
         echo $TOOT_CONFIG > pytooter_usercred.secret
         python mastodon_bot.py
