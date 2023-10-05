@@ -1,6 +1,5 @@
 # own
 *.secret
-posts.csv
 *.sh
 
 # Byte-compiled / optimized / DLL files
