@@ -34,7 +34,7 @@ jobs:
         TOOT_CONFIG: ${{ secrets.PYTOOTER_USERCRED }}
       # Write that information to the secret file
       run: |-
-        echo $TOOT_CONFIG > pytooter_usercred.secret
+        echo $TOOT_CONFIG > ~/.config/pytooter_usercred.secret
         python mastodon_bot.py
     # So we can see what it last did:
     - name: Commit posts.csv

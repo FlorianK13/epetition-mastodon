@@ -10,7 +10,7 @@ from datetime import date
 def main():
     today = date.today()
     print("Today's date:", today)
-    mastodon = Mastodon(access_token = 'pytooter_usercred.secret')
+    mastodon = Mastodon(access_token = '~/.config/pytooter_usercred.secret')
     petitionen_list = get_10k_petitionen()
     if petitionen_list is None:
         return None
