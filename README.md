@@ -5,3 +5,8 @@ The `mastodon_bot.py` runs once per day on a server to fetch the current petitio
 If a petition has more than 10k supporters and if it was not already posted, it will be posted on mastodon once.
 
 
+```
+<a rel="me" href="https://troet.cafe/@bundestagpetitionen10k">Mastodon</a>
+```
+
+
